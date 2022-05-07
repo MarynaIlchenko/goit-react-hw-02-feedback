@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container } from './Container';
+// import { Container } from './Container';
 import Section from './Section';
 import FeedbackOptions from './Feedback';
 import Statistics from './Statistics';
@@ -30,7 +30,7 @@ export class App extends Component {
     const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
     return (
-      <Container>
+      <div>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={this.state}
@@ -50,7 +50,7 @@ export class App extends Component {
             <Notification message="There is no feedback" />
           )}
         </Section>
-      </Container>
+      </div>
     );
   }
 }
