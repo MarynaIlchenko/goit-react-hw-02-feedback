@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './FeedbackOptions.module.css';
+import style from './FeedbackOptions.module.css';
 import PropTypes from 'prop-types';
 
 class FeedbackOptions extends Component {
@@ -14,7 +14,7 @@ class FeedbackOptions extends Component {
             type="button"
             className={style.Btn}
             name={item}
-            onCklick={() => onLeaveFeedback(item)}
+            onClick={() => onLeaveFeedback(item)}
           >
             {item}
           </button>
