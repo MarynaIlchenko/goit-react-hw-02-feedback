@@ -13,6 +13,7 @@ export class App extends Component {
   handlerOnClick = key => {
     this.setState(prevState => ({ [key]: prevState[key] + 1 }));
   };
+
   countTotalFeedback() {
     return Object.values(this.state).reduce((total, item) => total + item, 0);
   }
@@ -29,7 +30,7 @@ export class App extends Component {
     const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
     return (
-      <div>
+      <>
         <Section title="Please leave feedback">
           <FeedbackOptions
             options={this.state}
@@ -49,7 +50,7 @@ export class App extends Component {
             <Notification message="There is no feedback" />
           )}
         </Section>
-      </div>
+      </>
     );
   }
 }
