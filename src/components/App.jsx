@@ -10,6 +10,7 @@ export class App extends Component {
     neutral: 0,
     bad: 0,
   };
+
   handlerOnClick = key => {
     this.setState(prevState => ({ [key]: prevState[key] + 1 }));
   };
@@ -23,12 +24,13 @@ export class App extends Component {
     if (total <= 0) {
       return 0;
     }
-    return (this.state.good / total) * 100;
+    return Math.floor((this.state.good * 100) / total);
   }
 
   render() {
     const { good, neutral, bad } = this.state;
     const total = this.countTotalFeedback();
+
     return (
       <>
         <Section title="Please leave feedback">
